@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analogi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .product {
+        margin-bottom: 10px;
+      }
+
+      .output {
+        margin-top: 20px;
+      }
+
+      .cart {
+        margin-bottom: 20px;
+        cursor: pointer;
+        position: relative;
+        background-color: #f5f5f5;
+        padding: 10px;
+        width: 120px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      .cart:hover {
+        background-color: #e0e0e0;
+      }
+
+      #cart-data {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: antiquewhite;
+        padding: 20px;
+        translate: -100% 0;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        transition: all 0.3s ease;
+      }
+
+      #cart-data.open {
+        translate: 0 0;
+      }
+
+      .cart-item {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+
+      .close-cart {
+        cursor: pointer;
+        color: red;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Daftar Produk</h1>
+    <!-- Keranjang -->
+    <div class="cart" id="cart">
+      <p>Keranjang</p>
+      <span id="cart-count">0</span>
+    </div>
+
+    <!-- Slider Keranjang -->
+    <div id="cart-data">
+      <span class="close-cart" id="close-cart">Tutup</span>
+      <h2>Keranjang Belanja</h2>
+      <div id="cart-items"></div>
+      <button>Checkout</button>
+    </div>
+
+    <!-- Hasil mapping akan ditampilkan di sini -->
+    <div class="output" id="output-container">
+      <h2>Daftar Produk:</h2>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
